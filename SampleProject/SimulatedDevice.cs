@@ -19,8 +19,8 @@ namespace simulatedDevice
         private static DeviceClient s_serviceClient;
 
         // The device connection string to authenticate the device with your IoT hub.
-        private const string s_connectionString = "HostName=udemy-iot-course-hub.azure-devices.net;DeviceId=iot-dev-01;SharedAccessKey=S8oKH8Nhujth2FaVAcaz1XdUoXaAPG/2OPqWDQ5OR4c=";
-        private const string s_serviceConnectionString = "HostName=udemy-iot-course-hub.azure-devices.net;SharedAccessKeyName=service;SharedAccessKey=UA7hJdgytTYYwZzbqUY47ww4sMO9kSM4BAIoTGpiUyo=";
+        private const string s_connectionString = "HostName=udemy-iot-course-hub.azure-devices.net;DeviceId=iot-dev-01;SharedAccessKey=xxxxx";
+        private const string s_serviceConnectionString = "HostName=udemy-iot-course-hub.azure-devices.net;SharedAccessKeyName=service;SharedAccessKey=xxxx";
 
         // Async method to send simulated telemetry
         private static async void SendDeviceToCloudMessagesAsync()
@@ -80,6 +80,18 @@ namespace simulatedDevice
             await serviceClient.SendAsync(targetDevice, commandMessage);
         }
 
+        static async void HandleDesiredPropertiesChange()
+        {
+	        await s_deviceClient.SetDesiredPropertyUpdateCallbackAsync(async (desired, ctx) =>
+            {
+                Newtonsoft.Json.Linq.JValue fpsJson = desired["FPS"];
+                var fps = fpsJson.Value;
+
+                Console.WriteLine("Received desired FPS: {0}", fps);
+
+            }, null);
+}
+
         private static async Task Main()
         {
             Console.WriteLine("IoT Hub Quickstarts - Simulated device. Ctrl-C to exit.\n");
@@ -88,7 +100,9 @@ namespace simulatedDevice
             s_deviceClient = DeviceClient.CreateFromConnectionString(s_connectionString, Microsoft.Azure.Devices.Client.TransportType.Mqtt);
             // SendDeviceToCloudMessagesAsync();
             // await ReceiveC2dAsync();
-            await SendCloudToDeviceMessageAsync("iot-dev-01");
+            // await SendCloudToDeviceMessageAsync("iot-dev-01");
+            HandleDesiredPropertiesChange();
+
             Console.ReadLine();
         }
     }

@@ -9,7 +9,8 @@ namespace DeviceTwinBackend
         static RegistryManager registryManager;
 
         // CHANGE THE CONNECTION STRING TO THE ACTUAL CONNETION STRING OF THE IOT HUB (SERVICE POLICY)
-        static string connectionString = "";
+        static string connectionString =
+            "HostName=udemy-iot-course-hub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=xxxxx";
 
         public static async Task SetDeviceTags(string deviceId)
         {
@@ -25,7 +26,7 @@ namespace DeviceTwinBackend
                         },
                         properties: {
                             desired:  {
-                                FPS: 30
+                                FPS: 60
                             }
                         }
                     }";
