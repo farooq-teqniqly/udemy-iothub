@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUploadNotificationSampl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DPSSample", "DPSSample\DPSSample.csproj", "{A483FE2D-89F3-4A3C-90C0-736F6FB08D58}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleTwinBackend", "ModuleTwinBackend\ModuleTwinBackend.csproj", "{E570DDAD-93E1-494A-9183-9E765016C1D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +87,18 @@ Global
 		{A483FE2D-89F3-4A3C-90C0-736F6FB08D58}.Release|x64.Build.0 = Release|Any CPU
 		{A483FE2D-89F3-4A3C-90C0-736F6FB08D58}.Release|x86.ActiveCfg = Release|Any CPU
 		{A483FE2D-89F3-4A3C-90C0-736F6FB08D58}.Release|x86.Build.0 = Release|Any CPU
+		{E570DDAD-93E1-494A-9183-9E765016C1D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E570DDAD-93E1-494A-9183-9E765016C1D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E570DDAD-93E1-494A-9183-9E765016C1D7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E570DDAD-93E1-494A-9183-9E765016C1D7}.Debug|x64.Build.0 = Debug|Any CPU
+		{E570DDAD-93E1-494A-9183-9E765016C1D7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E570DDAD-93E1-494A-9183-9E765016C1D7}.Debug|x86.Build.0 = Debug|Any CPU
+		{E570DDAD-93E1-494A-9183-9E765016C1D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E570DDAD-93E1-494A-9183-9E765016C1D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E570DDAD-93E1-494A-9183-9E765016C1D7}.Release|x64.ActiveCfg = Release|Any CPU
+		{E570DDAD-93E1-494A-9183-9E765016C1D7}.Release|x64.Build.0 = Release|Any CPU
+		{E570DDAD-93E1-494A-9183-9E765016C1D7}.Release|x86.ActiveCfg = Release|Any CPU
+		{E570DDAD-93E1-494A-9183-9E765016C1D7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
